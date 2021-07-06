@@ -26,7 +26,7 @@ const IndexView = () =>{
     return (
         <div className='mx-8 pb-4'>
             
-            {selected.length >0 ? <div className='bg-gray-50 '>< CyptoDetail id={selected}  price={price} mcap={mcap} supply={supply}/></div>:<p>please select a  coin</p> }
+            {selected.length >0 ? <div className='bg-gray-50 '>< CyptoDetail id={selected}  price={price} mcap={mcap} supply={supply}/></div>:<div className='grid grid-col-1 bg-gray-100 text-center py-2 px-6 mt-2'><p>please select a  coin</p></div> }
             <div className='flex justify-center text-xl font-bold m-6'>Crypto Options</div>
             <div className='lg:grid lg:grid-cols-4 sm:grid sm:grid-cols-1'>
                 {cryptoCoins.map((coin)=>(<div className='' onClick={e=>{handleClick(coin)}}>< CoinProfile   id={`${coin.id}`} symbol={`${coin.symbol}`} image={`${coin.image}`} /></div>))}
