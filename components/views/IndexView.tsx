@@ -12,8 +12,7 @@ const IndexView = () =>{
     useEffect(()=>{
         axios.get(`https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&ids=bitcoin%2Cethereum%2Cdogecoin%2Ccardano%2Cbinancecoin%2Cripple%2Cstellar%2C%20uniswap&order=market_cap_desc&per_page=100&page=1&sparkline=false
         `)
-        .then(res => { setCryptoCoins(res.data) 
-            console.log(res.data) })
+        .then(res => { setCryptoCoins(res.data) })
         .catch(error => console.log(error))
     },[])
     const handleClick=(coin)=>{
@@ -29,7 +28,7 @@ const IndexView = () =>{
             
             {selected.length >0 ? <div className='bg-gray-50 '>< CyptoDetail id={selected}  price={price} mcap={mcap} supply={supply}/></div>:<p>please select a  coin</p> }
             <div className='flex justify-center text-xl font-bold m-6'>Crypto Options</div>
-            <div className='grid grid-cols-4'>
+            <div className='lg:grid lg:grid-cols-4 sm:grid sm:grid-cols-1'>
                 {cryptoCoins.map((coin)=>(<div className='' onClick={e=>{handleClick(coin)}}>< CoinProfile   id={`${coin.id}`} symbol={`${coin.symbol}`} image={`${coin.image}`} /></div>))}
             </div>
         </div>

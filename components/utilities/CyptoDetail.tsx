@@ -27,9 +27,7 @@ const CyptoDetail = ({id, price,mcap,supply}:Props) =>{
         
 
             }
-            
         
-            console.log(prices)
             const resultData = {
                 labels: time,
                 datasets: [
@@ -67,7 +65,7 @@ const CyptoDetail = ({id, price,mcap,supply}:Props) =>{
            < LineChart priceHistory={result}/>
            <br/>
          
-           <div className='flex flex-row space-x-16 justify-center border border-2 py-2'>
+           <div className='flex flex-row space-x-8 justify-center border border-2 py-2'>
                 
                 <div onClick={e=>{setDays('1')}}>1</div>
                 <div onClick={e=>{setDays('30')}}>30</div>
