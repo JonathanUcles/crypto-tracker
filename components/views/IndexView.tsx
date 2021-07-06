@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
-import CoinProfile from './CoinProfile'
-import CyptoDetail from './CyptoDetail'
+import CoinProfile from '../utilities/CoinProfile'
+import CyptoDetail from '../utilities/CyptoDetail'
 import axios from 'axios'
 
 const IndexView = () =>{

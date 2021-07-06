@@ -1,16 +1,12 @@
-import {def} from 'tailwindcss'
-
 module.exports = {
-  mode: 'jit',
-  purge: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
-  theme: {
-    extend: {
-      fontWeight: ['hover', 'focus'],
-      fontFamily: {
-        sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-      },
+    purge: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+    darkMode: false, // or 'media' or 'class'
+    theme: {
+      extend: {},
     },
-  },
-  variants: {},
-  plugins: []
-};
+    variants: {
+      extend: {},
+    },
+    plugins: [require("tailwind-scrollbar-hide"),],
+}
+  
