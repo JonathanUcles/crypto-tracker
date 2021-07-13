@@ -61,7 +61,7 @@ const CyptoDetail = ({id, price,mcap,supply}:Props) =>{
                         <div className='text-xl '><span className='font-extrabold'>Cirrculating Supply: </span> {supply.toLocaleString()}</div>
                    </div>
                </div>
-               <div className='text-center'><h2>{id}'s {days} day view</h2></div>
+               <div className='text-center'><h2>{id} {days} day view</h2></div>
            < LineChart priceHistory={result}/>
            <br/>
          

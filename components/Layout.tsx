@@ -16,9 +16,12 @@ const Layout = ({ children, title = 'This is the default title' }: Props) => (
     </Head>
     <header>
     <div className='bg-black text-white p-2'><h1 className='text-2xl text-center font-bold mb-2'>Crypto <span className='text-yellow-500'>Tracker</span>.</h1></div>
-
     </header>
-    {children}
+    <div className='flex flex-row bg-gray-50'>
+      <div className='lg:bg-yellow-500 lg:p-8'></div>
+      <div className='flex-grow'>{children}</div>
+    </div>
+    
    
   </div>
 )

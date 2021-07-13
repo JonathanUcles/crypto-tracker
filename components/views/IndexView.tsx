@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import CoinProfile from '../utilities/CoinProfile'
 import CyptoDetail from '../utilities/CyptoDetail'
+import MarketCap from '../utilities/MarketCap'
 import axios from 'axios'
 
 const IndexView = () =>{
@@ -26,11 +27,17 @@ const IndexView = () =>{
     return (
         <div className='mx-8 pb-4'>
             
-            {selected.length >0 ? <div className='bg-gray-50 '>< CyptoDetail id={selected}  price={price} mcap={mcap} supply={supply}/></div>:<div className='grid grid-col-1 bg-gray-100 text-center py-2 px-6 mt-2'><p>please select a  coin</p></div> }
-            <div className='flex justify-center text-xl font-bold m-6'>Crypto Options</div>
-            <div className='lg:grid lg:grid-cols-4 sm:grid sm:grid-cols-1'>
-                {cryptoCoins.map((coin)=>(<div className='' onClick={e=>{handleClick(coin)}}>< CoinProfile   id={`${coin.id}`} symbol={`${coin.symbol}`} image={`${coin.image}`} /></div>))}
+            <div className='bg-gray-50 '>< CyptoDetail id={selected}  price={price} mcap={mcap} supply={supply}/></div>
+            <div className='text-xl font-bold my-4 ml-2'>Crypto Options</div>
+            <div className='lg:flex lg:flex-row  lg:space-x-4'>
+                <div className='flex flex-col lg:flex-grow'>
+                    {cryptoCoins.map((coin)=>(<div className='' onClick={e=>{handleClick(coin)}}>< CoinProfile   id={`${coin.id}`} symbol={`${coin.symbol}`} image={`${coin.image}`} /></div>))}
+                    
+                </div>
+                <div><MarketCap btc={620700813936} eth={234848917785} bnb={48280552215} ada={41757676612} doge={29266877977} uni={10001437836} xlm={5575928116} /></div>
             </div>
+          
+            
         </div>
     )
 }
